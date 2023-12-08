@@ -20,11 +20,11 @@ export const Auth = () => {
             isAuth: true,
         }
         localStorage.setItem("auth", JSON.stringify(authInfo));
-        navigate("/buttons");
+        navigate("/homepage");
     };
 
     if (isAuth){
-        return <Navigate to="/buttons"/>
+        return <Navigate to="/homepage"/>
     }
     return <div className="login-page">
         <p>Sign In with Google to Continue</p>

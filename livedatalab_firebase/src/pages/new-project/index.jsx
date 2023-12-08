@@ -32,7 +32,7 @@ export const NewProject = () => {
 
     setProjectName("")
     setProjectDescription("")
-    navigate("../buttons")
+    navigate("../homepage")
   };
 
   const signUserOut = async () => {
@@ -47,7 +47,7 @@ export const NewProject = () => {
 
   const returnToButtons = async () => {
     try {
-      navigate("../buttons");
+      navigate("../homepage");
     } catch (err) {
       console.log(err);
     }
