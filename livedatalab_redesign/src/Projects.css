@@ -40,6 +40,14 @@
   color: rgb(79, 79, 79);
 }
 
+.Box {
+  background-color: #e6e6e6;
+  padding-top: 50%;
+  max-width: 70%;
+  max-height: 5em;
+  justify-content: left;
+}
+
 .subtext {
   background-color: #e6e6e6;
   min-height: 100vh;

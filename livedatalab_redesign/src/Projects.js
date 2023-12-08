@@ -7,6 +7,7 @@ function Projects() {
       <header className="Header">
         <p>Projects You've Started</p>
         <div className='subtext'>You have not started any projects.</div>
+        <p>All Projects</p>
       </header>
 
     </div>
