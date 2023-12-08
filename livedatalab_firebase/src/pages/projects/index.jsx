@@ -10,6 +10,7 @@ export const Projects = () => {
 
       <header className="Header">
       <div className="projects">
+        <p>Your Projects</p>
             <ul>
               {projects.map((project) => {
                 const { projectName, projectDesc, course } = project;

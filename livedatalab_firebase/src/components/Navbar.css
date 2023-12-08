@@ -6,30 +6,43 @@
     float: left;
     height: 8vmin;
     pointer-events: none;
+    margin-top: -0.2%;
+    margin-left: -1;
   }
   
 
   .Pages button{
     float: left;
     min-width: 15vh;
+    margin-top: 1%;
     text-align: center;
-    padding: 14px 12px;
-    font-size: 12px;
-    background-color: gray;
+    padding: 14px 14px;
+    font-size: 16px;
+    background-color: rgb(48, 99, 161);
     font-weight: bold;
     color:rgb(79, 79, 79)
   }
   
   .Pages a:hover {
     background-color: #ddd;
-    color: black;
+    color: rgb(255, 255, 255);
   }
 
-.navbar {
-   
-
+  .navbar .sign-out-button {
+    color: rgb(255, 255, 255);
+    margin-top: -5%;
+    margin-bottom: 2%;
+    margin-right: -75%;
   }
-  
+
+  .navbar .profile-username {
+    color: rgb(79, 79, 79);
+    margin-top: -4%;
+    margin-right: -15%;
+    font-weight: bold;
+    font-size: large;
+  }
+
   .nav-list {
     list-style: none;
     display: flex;
@@ -43,21 +56,19 @@
     cursor: pointer;
     position: relative;
   }
-
   
   .dropdown {
     display: inline-block;
     position: relative;
+    margin-top: 0.8%;
   }
-
-
 
   .dropdown-menu {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
     min-width: 160px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 16px rgba(245, 245, 245, 0.2);
     z-index: 1;
   }
 
@@ -91,4 +102,6 @@
   .profile-photo {
     height: 50px;
     width: auto;
+    margin-left: 50%;
+    margin-top: 0.5%;
   }

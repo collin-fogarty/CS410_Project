@@ -73,13 +73,15 @@ export const Navbar = () => {
           
         </ul>
         <div className="profile">
-              {" "}
-              <img className="profile-photo" src={profilePhoto} />
-              <p>User Name: {name}</p>
-              <button className="sign-out-button" onClick={signUserOut}>
-                Sign Out
-              </button>
-            </div>
+            {" "}
+            <img className="profile-photo" src={profilePhoto} />
+            <button className="sign-out-button" onClick={signUserOut}>
+              Sign Out
+            </button>
+        </div>
+        <div className="profile-username">
+          <p>{name}</p>
+        </div>
       </nav>
     </div>
   );
