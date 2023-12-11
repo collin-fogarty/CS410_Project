@@ -75,7 +75,7 @@ export const Navbar = () => {
         </ul>
         <div className="profile">
             {" "}
-            <img className="profile-photo" src={profilePhoto} />
+            <img className="Navbar_profile-photo" src={profilePhoto} />
             <button className="sign-out-button" onClick={signUserOut}>
               Sign Out
             </button>

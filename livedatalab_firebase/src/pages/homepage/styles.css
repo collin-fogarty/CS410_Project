@@ -1,7 +1,7 @@
 
 
 .Header {
-  background-color: #e6e6e6;
+  background-color: #f3f3f3;
   min-height: 100vh;
   box-sizing: border-box;
   display: flex;
@@ -13,7 +13,7 @@
   font-weight: bold;
   font-size: calc(10px + 2vmin);
   line-height: 0%;
-  color: rgb(79, 79, 79);
+  color: rgb(41, 41, 41);
 }
 
 .subtext {
