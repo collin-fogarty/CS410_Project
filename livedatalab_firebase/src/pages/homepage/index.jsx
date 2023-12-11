@@ -1,10 +1,16 @@
 import "./styles.css";
 import ReactSearchBox from "react-search-box";
+import moment from "moment";
 
 import { Navbar } from "../../components/Navbar";
 import { useGetProjects } from "../../hooks/useGetProjects";
+import { useGetSubmissions} from "../../hooks/useGetSubmission";
 
 export const Homepage = () => {
+
+    const {submissions } = useGetSubmissions();
+
+
 
     const { projects } = useGetProjects();
   return (
@@ -40,9 +46,18 @@ export const Homepage = () => {
               callback={(record) => console.log(record)}
             />
 
-            <div className="subtext">
-              No submissions are available or match the filter.
-            </div>
+        {submissions.map((submission) => {
+
+                const createdDate = submission.createdAt.toDate();
+                const formattedDate = moment(createdDate).format('MMMM D, YYYY');
+                const { submissionName, projectName } = submission;
+
+                return (
+                  <li>
+            <p>{submissionName}: {projectName} : {formattedDate}</p>
+                  </li>
+                );
+              })} 
           </header>
         </div>
       </div>

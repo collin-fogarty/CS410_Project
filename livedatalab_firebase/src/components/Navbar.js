@@ -67,6 +67,7 @@ export const Navbar = () => {
                 <Link to="/new-project">Project </Link>
                 <Link to="/new-course">Course </Link>
                 <Link to="/new-leaderboard">Leaderboard </Link>
+                <Link to="/new-submission">Submission</Link>
               </div>
             </div>
           </li>

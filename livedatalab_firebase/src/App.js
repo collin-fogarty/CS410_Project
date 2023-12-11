@@ -10,7 +10,7 @@ import {Courses} from "./pages/courses";
 import {Manage} from "./pages/manage";
 import {logo} from "./assets/cornerlogo.png";
 import {Navbar} from "./components/Navbar";
-
+import {NewSubmission} from "./pages/new-submission";
 //Auth component renders when we go to the initial route.   Auth page comes from auth/index.jsx
 function App() {
   return (
@@ -28,6 +28,8 @@ function App() {
             <Route path="/new-project" element={<NewProject />} />
             <Route path="/new-course" element={<NewCourse />} />
             <Route path="/new-leaderboard" element={<NewLeaderboard />} />
+            <Route path="/new-submission" element={<NewSubmission />} />
+
           </Routes>
     
       </Router>
