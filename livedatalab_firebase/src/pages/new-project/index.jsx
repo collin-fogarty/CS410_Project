@@ -22,14 +22,15 @@ export const NewProject = () => {
 
   //const { balance, income, expenses } = transactionTotals;
 
-  const onSubmit = (e) => {
+  const  onSubmit = (e) => {
     e.preventDefault();
-    addProject({
+     addProject({
       projectName,
       projectDesc,
       course,
     });
 
+   
     setProjectName("")
     setProjectDescription("")
     navigate("../homepage")

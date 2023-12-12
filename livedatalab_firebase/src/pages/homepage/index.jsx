@@ -48,13 +48,13 @@ export const Homepage = () => {
 
         {submissions.map((submission) => {
 
-                const createdDate = submission.createdAt.toDate();
-                const formattedDate = moment(createdDate).format('MMMM D, YYYY');
+                
+                
                 const { submissionName, projectName } = submission;
 
                 return (
                   <li>
-            <p>{submissionName}: {projectName} : {formattedDate}</p>
+            <p>{submissionName}: {projectName}</p>
                   </li>
                 );
               })} 

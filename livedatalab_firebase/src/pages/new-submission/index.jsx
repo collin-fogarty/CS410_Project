@@ -3,10 +3,13 @@ import { useAddSubmission } from "../../hooks/useAddSubmission";
 //import { useGetLeaderboards } from "../../hooks/useGetLeaderboards";
 import { useGetProjects } from "../../hooks/useGetProjects";
 import { useNavigate } from "react-router-dom";
+import Modal from 'react-modal';
 
 import "./styles.css";
 
-export const NewSubmission = () => {
+export const NewSubmission = ({isOpen, onClose}) => {
+
+
   const { addSubmission } = useAddSubmission();
   //const { leaderboards } = useGetLeaderboards();
   const { projects } = useGetProjects();
@@ -17,26 +20,36 @@ export const NewSubmission = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    addSubmission({
-      submissionName,
-      projectName,
-    });
+    
+
+    setTimeout(() => {
+      addSubmission({
+        submissionName,
+        projectName,
+      });
+
+    }, 2000);
 
     setProjectName("");
-    navigate("../homepage");
+
+    returnToButtons();
+
+
   };
 
   const returnToButtons = async () => {
     try {
-      navigate("../homepage");
+      onClose();
+   
     } catch (err) {
       console.log(err);
     }
   };
   return (
-    <div className="new-submission">
-      <div className="container">
-        <h1> Create a New Submission</h1>
+    <Modal show={true} isOpen={isOpen} onRequestClose={onClose}
+    className="custom-modal"
+    overlayClassName="custom-modal-overlay"
+    >
         <form className="add-submission" onSubmit={onSubmit}>
           <label for="project">Project (please select)</label>
           <select
@@ -65,7 +78,8 @@ export const NewSubmission = () => {
             Cancel
           </button>
         </form>
-      </div>
-    </div>
+
+        </Modal>
+  
   );
 };

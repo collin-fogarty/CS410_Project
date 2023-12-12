@@ -7,6 +7,7 @@ import { signOut } from "firebase/auth";
 import { useGetUserInfo } from "../hooks/useGetUserInfo";
 import { auth } from "../config/firebase-config";
 import { useNavigate } from "react-router-dom";
+import { NewSubmission } from "../pages/new-submission";
 
 export const Navbar = () => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
@@ -16,6 +17,15 @@ export const Navbar = () => {
 
   const { name, profilePhoto } = useGetUserInfo();
   const navigate = useNavigate();
+
+  const[isFormOpen, setFormOpen] = useState(false);
+
+  const openForm = () => {
+    setFormOpen(true);
+  };
+  const closeForm = () => {
+    setFormOpen(false);
+  };
 
   const signUserOut = async () => {
     try {
@@ -67,8 +77,12 @@ export const Navbar = () => {
                 <Link to="/new-project">Project </Link>
                 <Link to="/new-course">Course </Link>
                 <Link to="/new-leaderboard">Leaderboard </Link>
-                <Link to="/new-submission">Submission</Link>
+                <div>
+                  <button onClick={openForm}>Submission </button>
+                <NewSubmission isOpen={isFormOpen} onClose={closeForm}/>
+              
               </div>
+            </div>
             </div>
           </li>
           
