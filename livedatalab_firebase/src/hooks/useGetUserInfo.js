@@ -20,3 +20,5 @@ try {
     console.error('Error parsing JSON:', error.message)
 }
 };
+
+//{"userID":"imnXlkZEVqdsNXY12MvOScHrdTl2","name":"Seth Buchinger","profilePhoto":"https://lh3.googleusercontent.com/a/ACg8ocKFs9wt2xz-xxzvTV3-u1xRodDGCAGAeV6kkuM7jZqvvag=s96-c","isAuth":true}
