@@ -4,15 +4,15 @@ import moment from "moment";
 
 import { Navbar } from "../../components/Navbar";
 import { useGetProjects } from "../../hooks/useGetProjects";
-import { useGetSubmissions} from "../../hooks/useGetSubmission";
+import { useGetSubmissions } from "../../hooks/useGetSubmission";
+
+import { useGetUserInfo } from "../../hooks/useGetUserInfo";
 
 export const Homepage = () => {
+  const { submissions } = useGetSubmissions();
+  const { name, userID } = useGetUserInfo();
 
-    const {submissions } = useGetSubmissions();
-
-
-
-    const { projects } = useGetProjects();
+  const { projects } = useGetProjects();
   return (
     <div className="Homepage">
       {<Navbar />}
@@ -26,7 +26,9 @@ export const Homepage = () => {
 
                 return (
                   <li>
-            <p>{projectName}: {projectDesc}</p>
+                    <p>
+                      {projectName}: {projectDesc}
+                    </p>
                   </li>
                 );
               })}
@@ -34,7 +36,11 @@ export const Homepage = () => {
           </div>
 
           <h2>Linked Accounts</h2>
-          <div className="subtext">No Linked Accounts</div>
+          <div className="subtext">
+            <p>Google</p> 
+            <p>Name: {name}</p>
+            <p>UserID: {userID} </p>
+          </div>
         </div>
         <div class="flex-child-element right">
           <header className="Search">
@@ -46,18 +52,17 @@ export const Homepage = () => {
               callback={(record) => console.log(record)}
             />
 
-        {submissions.map((submission) => {
+            {submissions.map((submission) => {
+              const { submissionName, projectName } = submission;
 
-                
-                
-                const { submissionName, projectName } = submission;
-
-                return (
-                  <li>
-            <p>{submissionName}: {projectName}</p>
-                  </li>
-                );
-              })} 
+              return (
+                <li>
+                  <p>
+                    {submissionName}: {projectName}
+                  </p>
+                </li>
+              );
+            })}
           </header>
         </div>
       </div>

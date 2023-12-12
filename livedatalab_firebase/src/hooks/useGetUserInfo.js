@@ -5,12 +5,14 @@ export const useGetUserInfo = () => {
 
 try {
     let parsedData = JSON.parse(localStorage.getItem("auth"));
+    console.log(parsedData);
     if (parsedData === null){
         console.log('Parsed JSON is null.');
         return { isAuth:false}
       
     }else {
         const {name, profilePhoto, userID, isAuth} = parsedData;
+       
         return {name, profilePhoto, userID, isAuth}
     }
 
