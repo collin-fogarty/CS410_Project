@@ -1,6 +1,7 @@
 import './styles.css';
 import {Navbar} from "../../components/Navbar";
 import { useGetProjects } from "../../hooks/useGetProjects";
+import { useGetSubmissions } from "../../hooks/useGetSubmission";
 
 export const Projects = () => {
   const { projects } = useGetProjects();
@@ -23,7 +24,6 @@ export const Projects = () => {
                   <p><span className='emphasized'>{projectName}: </span>{projectDesc} | 
                   <span className='emphasized'> Rank: </span>4 | 
                   <span className='emphasized'> Username: </span>github-username | 
-                  <span className='emphasized'> Submission Number: </span>4 | 
                   <span className='emphasized'> Score: </span>1</p>
                 </li>
               );

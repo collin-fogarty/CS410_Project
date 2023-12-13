@@ -38,6 +38,6 @@ export const useGetSubmissions = () => {
   };
   useEffect(() => {
     getSubmissions();
-  }, []);
+  }, );
   return { submissions};
 };
