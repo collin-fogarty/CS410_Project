@@ -41,6 +41,7 @@ export const NewCourse = ({isOpen, onClose}) => {
       className="custom-modal"
       overlayClassName="custom-modal-overlay"
     >
+      <h1>Please add a new course</h1>
       <form className="add-course" onSubmit={onSubmit}>
         <input
           type="text"

@@ -42,6 +42,7 @@ export const NewSubmission = ({ isOpen, onClose }) => {
       className="custom-modal"
       overlayClassName="custom-modal-overlay"
     >
+      <h1>Please add a submission</h1>
       <form className="add-submission" onSubmit={onSubmit}>
         <label for="project">Project (please select)</label>
         <select

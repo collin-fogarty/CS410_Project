@@ -44,6 +44,7 @@ export const NewProject = ({ isOpen, onClose }) => {
       className="custom-modal"
       overlayClassName="custom-modal-overlay"
     >
+      <h1>Please input project info</h1>
       <form className="add-project" onSubmit={onSubmit}>
         <input
           type="text"
