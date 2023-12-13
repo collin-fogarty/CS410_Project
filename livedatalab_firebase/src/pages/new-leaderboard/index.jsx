@@ -1,20 +1,14 @@
 import { useState } from "react";
 import { useAddLeaderboard } from "../../hooks/useAddLeaderboard";
-//import { useGetLeaderboards } from "../../hooks/useGetLeaderboards";
 import { useGetProjects } from "../../hooks/useGetProjects";
-import { useGetUserInfo } from "../../hooks/useGetUserInfo";
-import { signOut } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
+import Modal from "react-modal";
 
 import "./styles.css";
-import { auth } from "../../config/firebase-config";
 
-export const NewLeaderboard= () => {
+
+export const NewLeaderboard= ({isOpen, onClose}) => {
   const { addLeaderboard } = useAddLeaderboard();
-  //const { leaderboards } = useGetLeaderboards();
   const { projects } = useGetProjects();
-  const { name, profilePhoto } = useGetUserInfo();
-  const navigate = useNavigate();
 
   const [projectName, setProjectName] = useState("");
   const [columnNames, setColumnNames] = useState("");
@@ -31,30 +25,26 @@ export const NewLeaderboard= () => {
 
     setProjectName("")
     setColumnNames("")
-    navigate("../buttons")
+    returnToButtons();
   };
 
-  const signUserOut = async () => {
-    try {
-      await signOut(auth);
-      localStorage.clear();
-      navigate("/");
-    } catch (err) {
-      console.log(err);
-    }
-  };
+
 
   const returnToButtons = async () => {
     try {
-      navigate("../buttons");
+      onClose();
     } catch (err) {
       console.log(err);
     }
   };
   return (
-      <div className="new-leaderboard">
-        <div className="container">
-          <h1> Create a New Leaderboard</h1>
+    <Modal
+    show={true}
+    isOpen={isOpen}
+    onRequestClose={onClose}
+    className="custom-modal"
+    overlayClassName="custom-modal-overlay"
+  >
           <form className="add-leaderboard" onSubmit={onSubmit}>
           <label for="project">Project (please select)</label>
             <select
@@ -103,18 +93,7 @@ export const NewLeaderboard= () => {
             <button type="submit"> Create</button>
             <button className="cancel" onClick={returnToButtons}> Cancel</button>
           </form>
-        </div>
-        {profilePhoto && (
-          <div className="profile">
-            {" "}
-            <img className="profile-photo" src={profilePhoto} />
-            <p>User Name: {name}</p>
-            <button className="sign-out-button" onClick={signUserOut}>
-              Sign Out
-            </button>
-          </div>
-        )}
-      </div>
+      </Modal>
 
   );
 };
