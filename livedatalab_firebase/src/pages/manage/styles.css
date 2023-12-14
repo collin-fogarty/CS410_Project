@@ -1,27 +1,57 @@
+.ProjectsHeader {
+  background-color: #ffffff;
+  min-height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  padding-left: 2%;
+  padding-top: 1%;
+  justify-content: left;
+  font-size: calc(10px + 2vmin);
+  line-height: 0%;
+}
 
-  .Header {
-    background-color: #e6e6e6;
-    min-height: 100vh;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    padding-left: 2%;
-    padding-top: 1%;
-    justify-content: left;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-weight: bold;
-    font-size: calc(10px + 2vmin);
-    line-height: 0%;
-    color: rgb(79, 79, 79);
-  }
-  
-  .subtext {
-    background-color: #e6e6e6;
-    min-height: 5vh;
-    box-sizing: border-box;
-    justify-content: left;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-style: italic;
-    font-size: calc(5px + 2vmin);
-    color: rgb(96, 96, 96);
-  }
+.List {
+  width: 110vh;
+  border: 2px;
+  padding-left: 1vh;
+  border-style: solid;
+  box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
+  border-radius: 1vh;
+  font-size: 2vh;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.emphasized {
+  font-weight: bolder;
+}
+
+.List:hover {
+  background-color: #e1e1e1;
+}
+
+.Title {
+  text-align: left;
+  padding-bottom: 0.75%;
+  font-weight: bolder;
+  color: rgb(61, 61, 61);
+  font-size: 3vh;
+  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+
+.SecondTitle {
+  text-align: left;
+  padding-top: 2%;
+  padding-bottom: 0.75%;
+  font-weight: bolder;
+  color: rgb(61, 61, 61);
+  font-size: 3vh;
+  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+
+.SecondSubtext {
+  font-style: italic;
+  background-color: white;
+  font-size: medium;
+  color:#717171;
+}
