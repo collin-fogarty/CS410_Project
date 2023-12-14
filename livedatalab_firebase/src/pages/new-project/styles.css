@@ -46,20 +46,3 @@
     cursor: pointer;
 }
 
-.checkbox-container {
-    display: inline-block;
-    vertical-align: center;
-    margin-right: 15px;
-
-}
-
-  .checkbox-container label{
-
-    margin-left: 100px;
-    
-  }
-  .checkbox-container input[type=checkbox]{
-    display: inline-block;
-    vertical-align: center;
-   
-  }

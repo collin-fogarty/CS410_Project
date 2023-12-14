@@ -61,7 +61,7 @@ export const NewSubmission = ({ isOpen, onClose }) => {
         <input
           name = "submission"
           type="text"
-          placeholder="New Submission"
+          placeholder="Please enter submission name"
           value={submissionName}
           required
           onChange={(e) => setSubmissionName(e.target.value)}

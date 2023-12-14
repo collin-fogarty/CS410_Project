@@ -45,6 +45,7 @@ export const NewLeaderboard= ({isOpen, onClose}) => {
     className="custom-modal"
     overlayClassName="custom-modal-overlay"
   >
+    <h1>Please enter leaderboard information</h1>
           <form className="add-leaderboard" onSubmit={onSubmit}>
           <label for="project">Project (please select)</label>
             <select
@@ -64,7 +65,9 @@ export const NewLeaderboard= ({isOpen, onClose}) => {
           })}
             </select>{" "}
             <br></br>
+            <label for="column">Column Name</label>
             <input
+              name="column"
               type="text"
               placeholder="New Column Name"
               value={columnNames}
@@ -73,22 +76,15 @@ export const NewLeaderboard= ({isOpen, onClose}) => {
             />
             <br></br>
             <label for="rankingCol">Ranking Column</label>
-            <select
+            <input
               name="rankingCol"
-              id="project"
+              type="text"
+              placeholder="New Column Name"
+              value={columnNames}
+              required
               onChange={(e) => setRankingCol(e.target.value)}
-            >
-              {projects.map((project) => {
-            const { projectName } =
-              project;
-
-            return (
-              <option>
-                {projectName}
-              </option>
-            );
-          })}
-            </select>
+            />
+      
             <br></br>
             <button type="submit"> Create</button>
             <button className="cancel" onClick={returnToButtons}> Cancel</button>

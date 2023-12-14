@@ -20,9 +20,11 @@ export const Navbar = () => {
 
   const { name, profilePhoto } = useGetUserInfo();
   const navigate = useNavigate();
+  const onHomeClick = () => navigate("/homepage");
+  const onProjectsClick = () => navigate("/projects");
+  const onCoursesClick = () => navigate("/courses");
+  const onManageClick = () => navigate("/manage");
 
-  
-  
   //handle Modal form open/close
   const [isSubFormOpen, setSubFormOpen] = useState(false);
   const [isProjFormOpen, setProjFormOpen] = useState(false);
@@ -53,7 +55,7 @@ export const Navbar = () => {
     setCourseFormOpen(false);
   };
 
-//leaderboard form
+  //leaderboard form
   const openLBForm = () => {
     setLBFormOpen(true);
   };
@@ -77,52 +79,35 @@ export const Navbar = () => {
       <nav className="navbar" role="navigation">
         <ul>
           <li>
-            <button>
-              <Link className="navbar-item" to="/homepage">
-                Home
-              </Link>
-            </button>
+            <button onClick={onHomeClick}>Home</button>
           </li>
           <li>
-            <button>
-              <Link className="navbar-item" to="/projects">
-                Projects
-              </Link>
-            </button>
+            <button onClick={onProjectsClick}>Projects</button>
           </li>
           <li>
-            <button>
-              <Link className="navbar-item" to="/courses">
-                Courses
-              </Link>
-            </button>
+            <button onClick={onCoursesClick}>Courses</button>
           </li>
           <li>
-            <button>
-              <Link className="navbar-item" to="/manage">
-                {" "}
-                Manage
-              </Link>
-            </button>
+            <button onClick={onManageClick}>Manage</button>
           </li>
           <li>
             <div class="dropdown">
               <button class="dropdown-toggle">Create</button>
               <div class="dropdown-menu">
-                
                 <button onClick={openCourseForm}>Course</button>
-                  <NewCourse isOpen={isCourseFormOpen} onClose={closeCourseForm} />
-              
-                  <button onClick={openProjForm}>Project</button>
-                  <NewProject isOpen={isProjFormOpen} onClose={closeProjForm} />
+                <NewCourse
+                  isOpen={isCourseFormOpen}
+                  onClose={closeCourseForm}
+                />
 
-                  <button onClick={openLBForm}>Leaderboard</button>
-                  <NewLeaderboard isOpen={isLBFormOpen} onClose={closeLBForm} />
-            
-        
-                  <button onClick={openSubForm}>Submission </button>
-                  <NewSubmission isOpen={isSubFormOpen} onClose={closeSubForm} />
-                
+                <button onClick={openProjForm}>Project</button>
+                <NewProject isOpen={isProjFormOpen} onClose={closeProjForm} />
+
+                <button onClick={openLBForm}>Leaderboard</button>
+                <NewLeaderboard isOpen={isLBFormOpen} onClose={closeLBForm} />
+
+                <button onClick={openSubForm}>Submission </button>
+                <NewSubmission isOpen={isSubFormOpen} onClose={closeSubForm} />
               </div>
             </div>
           </li>
@@ -130,13 +115,15 @@ export const Navbar = () => {
         <div className="profile">
           {" "}
           <img className="Navbar_profile-photo" src={profilePhoto} />
+          <p>{name}</p>
           <button className="sign-out-button" onClick={signUserOut}>
             Sign Out
           </button>
+      
+          
+        
         </div>
-        <div className="profile-username">
-          <p>{name}</p>
-        </div>
+        
       </nav>
     </div>
   );

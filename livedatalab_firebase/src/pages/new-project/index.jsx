@@ -96,13 +96,14 @@ export const NewProject = ({ isOpen, onClose }) => {
         </select>{" "}
         <br></br>
         <div className="checkbox-container">
+        <label for="material">Auto-Recommend Learning Materials</label>
         <input
           type="checkbox"
           id="material"
           name="material"
           value="Materials"
         />
-        <label for="material">Auto-Recommend Learning Materials</label>
+     
         </div>
         <button type="submit"> Create</button>
         <button className="cancel" onClick={returnToButtons}>
