@@ -7,6 +7,7 @@ import { NewLeaderboard } from "./pages/new-leaderboard";
 import {Homepage} from "./pages/homepage";
 import {Projects} from "./pages/projects";
 import {Courses} from "./pages/courses";
+import {CoursePage} from "./pages/coursesPage";
 import {Manage} from "./pages/manage";
 import {logo} from "./assets/cornerlogo.png";
 import {Navbar} from "./components/Navbar";
@@ -23,6 +24,7 @@ function App() {
             <Route path="/homepage" element={<Homepage />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/courses" element={<Courses />} />
+            <Route path="/coursesPage/:courseID" element={<CoursePage />} />
             <Route path="/manage" element={<Manage />} />
            
             <Route path="/new-project" element={<NewProject />} />
