@@ -6,10 +6,8 @@ import "./styles.css";
 
 import Modal from "react-modal";
 
-export const NewCourse = ({isOpen, onClose}) => {
+export const NewCourse = ({ isOpen, onClose }) => {
   const { addCourse } = useAddCourse();
-
-
 
   const [courseName, setCourseName] = useState("");
   const [courseDesc, setCourseDescription] = useState("");
@@ -43,17 +41,21 @@ export const NewCourse = ({isOpen, onClose}) => {
     >
       <h1>Please add a new course</h1>
       <form className="add-course" onSubmit={onSubmit}>
+        <label for="course">Course Name </label>
         <input
+          name="course"
           type="text"
-          placeholder="Course Name"
+          placeholder="Input name here"
           value={courseName}
           required
           onChange={(e) => setCourseName(e.target.value)}
         />
         <br></br>
+        <label for="coursedesc">Course Description</label>
         <input
+          name ="coursedesc"
           type="text"
-          placeholder="Short Description"
+          placeholder="Input description here"
           value={courseDesc}
           required
           onChange={(e) => setCourseDescription(e.target.value)}

@@ -46,17 +46,21 @@ export const NewProject = ({ isOpen, onClose }) => {
     >
       <h1>Please input project info</h1>
       <form className="add-project" onSubmit={onSubmit}>
+      <label for="project">Project Name </label>
         <input
+          name = "project"
           type="text"
-          placeholder="Project Name"
+          placeholder="Input project name here"
           value={projectName}
           required
           onChange={(e) => setProjectName(e.target.value)}
         />
         <br></br>
+        <label for="projectdesc">Project Description </label>
         <input
+          name = "projectdesc"
           type="text"
-          placeholder="Short Description"
+          placeholder="Input project description here"
           value={projectDesc}
           required
           onChange={(e) => setProjectDescription(e.target.value)}
@@ -91,13 +95,15 @@ export const NewProject = ({ isOpen, onClose }) => {
           })}
         </select>{" "}
         <br></br>
+        <div className="checkbox-container">
         <input
           type="checkbox"
           id="material"
           name="material"
           value="Materials"
         />
-        <label>Auto-Recoomend Learning Materials</label> <br></br>
+        <label for="material">Auto-Recommend Learning Materials</label>
+        </div>
         <button type="submit"> Create</button>
         <button className="cancel" onClick={returnToButtons}>
           {" "}

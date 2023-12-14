@@ -44,7 +44,7 @@ export const NewSubmission = ({ isOpen, onClose }) => {
     >
       <h1>Please add a submission</h1>
       <form className="add-submission" onSubmit={onSubmit}>
-        <label for="project">Project (please select)</label>
+        <label for="project">Project (please select)   </label>
         <select
           name="project"
           id="project"
@@ -57,7 +57,9 @@ export const NewSubmission = ({ isOpen, onClose }) => {
           })}
         </select>{" "}
         <br></br>
+        <label for="">Submission Name</label>
         <input
+          name = "submission"
           type="text"
           placeholder="New Submission"
           value={submissionName}
