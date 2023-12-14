@@ -41,6 +41,7 @@
   border: 2px solid #ddd;
   margin: 10px;
   border-radius: 15px 15px 15px 15px;
+  background-color: #f2f2f2;
 }
   
 .flex-child-element:first-child {
@@ -56,7 +57,7 @@
   border-collapse: collapse;
   padding-top: 10px;
   padding-bottom: 10px;
-  tr:nth-child(odd) {background-color: #f2f2f2;}
+  tr:nth-child(even) {background-color: #ffffff;}
 }
 
 td, th{
@@ -70,7 +71,7 @@ td, th{
 .projectList {
   width: 100%;
   border-collapse: collapse;
-  tr:nth-child(odd) {background-color: #f2f2f2;}
+  tr:nth-child(even) {background-color: #ffffff;}
 }
 
 .searchParent {
