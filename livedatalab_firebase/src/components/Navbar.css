@@ -21,7 +21,7 @@
     font-size: 16px;
     background-color: rgb(111, 129, 151);
     font-weight: bold;
-    color:rgb(53, 53, 53)
+    color:white
   }
   
   .Pages a:hover {
@@ -31,18 +31,12 @@
 
   .navbar .sign-out-button {
     color: rgb(255, 255, 255);
-    margin-top: -5%;
-    margin-bottom: 2%;
-    margin-right: -75%;
+    margin-top: 0px;
+    padding: 5px;
+    width: 10vh
+
   }
 
-  .navbar .profile-username {
-    color: rgb(79, 79, 79);
-    margin-top: -4%;
-    margin-right: -15%;
-    font-weight: bold;
-    font-size: large;
-  }
 
   .nav-list {
     list-style: none;
@@ -63,6 +57,7 @@
     display: inline-block;
     position: relative;
     margin-top: 0.8%;
+    margin-left: -40px;
   }
 
   .dropdown-menu {
@@ -102,8 +97,21 @@
   }
 
   .Navbar_profile-photo {
-    height: 50px;
+    height: 70px;
     width: auto;
-    margin-left: 50%;
-    margin-top: 0.5%;
+   
+    
+  }
+
+   div.profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .profile p {
+    font-size: 20px;
+    margin-top: 0px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-seriff;
   }

@@ -90,22 +90,18 @@ export const NewProject = ({ isOpen, onClose }) => {
 
             return <option>{courseName}</option>;
           })}
-        </select>{" "}
-        <br></br>
-        <input
-          type="checkbox"
-          id="material"
-          name="material"
-          value="Materials"
-        />
-        <label>Auto-Recoomend Learning Materials</label> <br></br>
-        <button type="submit"> Create</button>
-        <button className="cancel" onClick={returnToButtons}>
-          {" "}
-          Cancel
-        </button>
-      </form>
-    </Modal>
-  );
-};
-
+            </select>{" "}
+            <br></br>
+            <input
+              type="checkbox"
+              id="material"
+              name="material"
+              value="Materials"
+            />
+            <label>Auto-Recoomend Learning Materials</label> <br></br>
+            <button type="submit"> Create</button>
+            <button className="cancel" onClick={returnToButtons}> Cancel</button>
+          </form>
+        </Modal>
+  )};
+       

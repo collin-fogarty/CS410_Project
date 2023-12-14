@@ -7,6 +7,7 @@ import { useGetCourses } from '../../hooks/useGetCourses';
 export const Courses = () => {
   const { courses } = useGetCourses();
 
+
   return (
     <div className="Courses">
       <Navbar />
