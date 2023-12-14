@@ -13,11 +13,18 @@ import InputGroup from 'react-bootstrap/InputGroup';
 export const Homepage = () => {
   const { submissions } = useGetSubmissions();
   const { name, userID } = useGetUserInfo();
-
   const { projects } = useGetProjects();
 
   const [search, setSearch] = useState('');
   const [select, setSelect] = useState();
+  
+  function handleSubmit(e) {
+    e.preventDefault();
+  }
+
+  function truncate(str, n){
+    return (str.length > n) ? str.slice(0, n-1) + '...' : str;
+  };
 
   return (
     <div className="Homepage">
@@ -26,10 +33,13 @@ export const Homepage = () => {
         <div class="flex-child-element left">
 
           <div className="projects">
-            <h2>Your Projects</h2>
+            <div className="homepageHeader">
+              <p>Your Projects</p>
+            </div>
             <table className="projectList">
               <thead>
                 <tr>
+                  <th>Course</th>
                   <th>Project Name</th>
                   <th>Description</th>
                 </tr>
@@ -40,8 +50,9 @@ export const Homepage = () => {
 
                 return (
                       <tr>
+                        <td>{course}</td>
                         <td>{projectName}</td>
-                        <td>{projectDesc}</td>
+                        <td>{truncate(projectDesc,20)}</td>
                       </tr>
                 );
               })}
@@ -49,9 +60,11 @@ export const Homepage = () => {
             </table>
           </div>
           <div className="linkedAccounts">
-            <h2>Linked Accounts</h2>
+            <div className="homepageHeader">  
+              <p>Linked Accounts</p>
+            </div>
             <div className="subtext">
-              <p>Google</p> 
+              <p>Account: Google</p> 
               <p>Name: {name}</p>
               <p>UserID: {userID} </p>
             </div>
@@ -59,20 +72,28 @@ export const Homepage = () => {
         </div>
 
         <div class="flex-child-element right">
-          <header className="Search">
-            <h2>Submission History</h2>
+          <div className="submissionHistory">
+            <div className="homepageHeader">
+              <p>Submission History</p>
+            </div>
 
-            <select className="searchSelector" value={select} onChange={e => setSelect(e.target.value)}>
-              <option>Submission Name</option>
-              <option>Project Name</option>
-            </select>
-
-            <Form>
-              <InputGroup className="searchBar">
-                <Form.Control onChange={(event) => setSearch(event.target.value)} placeholder="Search Submissions" />
-              </InputGroup>
-            </Form>
-
+            <div class="searchParent">
+              <div class="searchChild">
+                <select className="searchSelector" value={select} onChange={e => setSelect(e.target.value)}>
+                  <option>Submission Name</option>
+                  <option>Project Name</option>
+                </select>
+              </div>
+              <div class="searchChild">
+                <div>
+                  <Form onSubmit={handleSubmit}>
+                    <InputGroup className="searchBar">
+                      <Form.Control size="lg" onChange={(event) => setSearch(event.target.value)} placeholder="Search Submissions" />
+                    </InputGroup>
+                  </Form>
+                </div>
+              </div>
+            </div>
             <table className = "submissionHistory">
               <thead>
                 <tr>
@@ -82,12 +103,12 @@ export const Homepage = () => {
               </thead>
               <tbody>
             {submissions.filter((item) => {
-              return search === '' ? item : select === 'Project Name' ? item.projectName.includes(search) : item.submissionName.includes(search);
+              return search.toLowerCase() === '' ? item : select === 'Project Name' ? item.projectName.toLowerCase().includes(search.toLowerCase()) : item.submissionName.toLowerCase().includes(search.toLowerCase());
             }).map((submission,index) => {
               const { submissionName, projectName } = submission;
               return (
                     <tr kay={index}>
-                      <td>{submissionName}</td>
+                      <td>{truncate(submissionName,40)}</td>
                       <td>{projectName}</td>
                     </tr>
               );
@@ -95,7 +116,7 @@ export const Homepage = () => {
               </tbody>
             </table>
 
-          </header>
+          </div>
         </div>
       </div>
     </div>
